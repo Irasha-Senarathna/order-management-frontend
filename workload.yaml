@@ -7,9 +7,10 @@ endpoints:
       - external
 
 dependencies:
-  - component: order-backend
-    name: http
-    visibility: project
-    envBindings:
-      - name: VITE_BACKEND_URL
-        value: ${dependencies.order-backend.http.url}
+  endpoints:
+    - component: order-backend
+      name: http
+      visibility: project
+      envBindings:
+        - name: VITE_BACKEND_URL
+          value: ${dependencies.order-backend.http.url}
