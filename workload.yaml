@@ -1,14 +1,15 @@
 endpoints:
-  http:
+  - name: http
     type: HTTP
     port: 80
     targetPort: 3000
     visibility:
       - external
+
 dependencies:
-  endpoints:
-    - component: order-backend
-      name: http
-      visibility: project
-      envBindings:
-        address: VITE_BACKEND_URL
+  - component: order-backend
+    name: http
+    visibility: project
+    envBindings:
+      - name: VITE_BACKEND_URL
+        value: ${dependencies.order-backend.http.url}
