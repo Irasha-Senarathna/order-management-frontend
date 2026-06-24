@@ -2,7 +2,7 @@ const http = require('node:http')
 const fs = require('node:fs')
 const path = require('node:path')
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 5000
 const distDir = path.join(__dirname, 'dist')
 const indexFile = path.join(distDir, 'index.html')
 
